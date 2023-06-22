@@ -1,0 +1,1 @@
+docker run --platform linux/amd64 -v "$(pwd)":/data --network surrealdb-network -it --rm ytrans-amd64 link "https://www.youtube.com/watch?v=JzPfMbG1vrE"
