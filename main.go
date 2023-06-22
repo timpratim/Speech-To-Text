@@ -28,7 +28,7 @@ import (
 
 const port = 8090
 
-const dbUrl = "ws://192.168.1.25:8000/rpc"
+const dbUrl = "ws://192.168.29.102:8000/rpc"
 const namespace = "surrealdb-conference-content"
 const database = "yttranscriber"
 
