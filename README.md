@@ -23,7 +23,7 @@ YTrans is a command-line tool to transcribe YouTube videos using the [whisper](h
 
 `docker network create surrealdb-network`
 
-3. Run surrealdb:
+3. Run SurrealDB:
 
 ```bash
 sh surrealdb.sh
