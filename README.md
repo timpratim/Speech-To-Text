@@ -124,6 +124,58 @@ Finally, you can engage workshop attendees in a Q&A session to address:
 
 This Q&A session helps solidify their understanding of the material and provides practical advice for applying the concepts learned in the workshop.
 
+## Architecture Diagram
+
+## Architecture diagram
+
+```mermaid
+graph TB
+  CLI[CLI Command]
+  TP[Transcribe App]
+  TR[Transcribe Function]
+  YTDL[youtubeDL Function]
+  SW[saveWav Function]
+  NPW[NewProgressWriter Function]
+  GM[GetModels Function]
+  DL[Download Function]
+  WN[whisper.New Function]
+  CP[Context.Process Function]
+  SRT[OutputSRT Function]
+  Repo[Transcriptions Repository]
+  NewRepo[NewTranscriptionsRepository Function]
+  SaveTR[SaveTranscriptions Function]
+  GetTR[GerTranscriptionsByYtlink Function]
+  CloseTR[Close Function]
+  YT_Client[youtube Client]
+  WN_Model[whisper Model]
+  Dec[wav Decoder]
+  SB[SurrealDB]
+  DB(Actual Database)
+
+  CLI --> TP
+  TP --> TR
+  TR --> YTDL
+  YTDL --> YT_Client
+  YTDL --> SW
+  SW --> NPW
+  TR --> GM
+  TR --> DL
+  TR --> WN
+  WN --> WN_Model
+  TR --> CP
+  CP --> SRT
+  TR --> Repo
+  Repo --> NewRepo
+  NewRepo --> SB
+  SB --> DB
+  Repo --> SaveTR
+  SaveTR --> DB
+  Repo --> GetTR
+  GetTR --> DB
+  Repo --> CloseTR
+  CloseTR --> SB
+  YTDL --> Dec
+```
 
 
 ## Important snippets
